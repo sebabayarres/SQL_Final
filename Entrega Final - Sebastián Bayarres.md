@@ -1,4 +1,4 @@
-### Entrega 1
+### Entrega Final
 
 ## Descripción de la temática de la base de datos
 
@@ -82,29 +82,7 @@ El campo id_comprador hace referencia a la tabla “compradores” mediante un F
 
 Adicionalmente se crean los campos de tipo_de_venta y forma_de_pago, con formato VARCHAR ya que pueden tener caracteres variables y con la condición NOT NULL ya que es obligatorio informar estos datos.
 
-A continuación se adjunta el script: [Script.sql](Script.sql)
-
-
-### Entrega 2
-
-## Correcciones de entrega anterior
-
-Durante el desarrollo de esta segunda entrega se ha detectado que algunos campos definidos en la entrega anterior no eran compatibles con las funciones que debían cumplir, por lo que fueron corregidos según se detalla a continuación.
-
-**Tabla “Ventas”.**
-
-En la primera entrega, se definió "id_comprador" como PRIMARY KEY en la tabla ventas, lo que impide repeticiones. Esto es incorrecto, ya que un comprador puede aparecer varias veces al comprar múltiples rifas.
-
-El campo que no debería repetirse es el de “id_rifa”, ya que cada rifa puede ser vendida a una sola persona. Por tanto, se ha corregido el script para crear la tabla estableciendo el campo “id_rifa” como PRIMARY KEY.
-
-Ver script adjunto: [Cambio de Primary Key en Tabla Ventas.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Correcciones/Cambio%20de%20Primary%20Key%20en%20Tabla%20Ventas.sql)
-
-
-**Tabla “Sorteos”.**
-
-En la primera entrega se definió el “id_sorteo” como auto incremental y PRIMARY KEY. Esto es incorrecto, ya que en cada sorteo hay varios premios, por lo que el “id_sorteo” debe repetirse. Por tanto, se ha corregido el script para crear la tabla sin estas condiciones.
-
-Ver script adjunto: [Cambio de Tabla Sorteos.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Correcciones/Cambio%20de%20Tabla%20Sorteos.sql)
+A continuación se adjunta el script: 
 
 ## Importación de datos
 
