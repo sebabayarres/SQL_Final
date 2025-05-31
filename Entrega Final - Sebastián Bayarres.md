@@ -20,7 +20,7 @@ La base de datos será utilizada por un vendedor que gestionará la venta de rif
 
 ## Diagrama Entidad Relación
 
-
+![Diagrama Entidad Relación](https://github.com/sebabayarres/SQL_Final/blob/main/Diagrama%20Entidad%20Relación/Diagrama%20Entidad%20Relación.jpg)
 
 ## Listado de Tablas en la Base de Datos:
 
