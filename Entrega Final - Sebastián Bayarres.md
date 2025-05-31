@@ -20,7 +20,6 @@ La base de datos será utilizada por un vendedor que gestionará la venta de rif
 
 ## Diagrama Entidad Relación
 
-![Diagrama ER](Diagrama%20Entidad%20Relacion.png)
 
 
 ## Listado de Tablas en la Base de Datos:
@@ -69,6 +68,8 @@ En esta tabla se registran todos los sorteos, se los identifica con un identific
 
 El campo id_premio hace referencia a la tabla “premios” mediante un FOREIGN KEY. El campo resultado hace referencia al campo “numero” de la tabla “rifas”, ya que el resultado del sorteo es un número de rifa que resulta ganador.
 
+Se ha definido un PRIMARY KEY entre el campo id_sorteo y el campo id_premio.
+
 - **Tabla “ventas”**
 
 En esta tabla se registran todos los sorteos, se los identifica con un identificador autoincremental al igual que en las tablas anteriores. Cada venta asocia un comprador con una rifa. Los campos son:
@@ -82,13 +83,133 @@ El campo id_comprador hace referencia a la tabla “compradores” mediante un F
 
 Adicionalmente se crean los campos de tipo_de_venta y forma_de_pago, con formato VARCHAR ya que pueden tener caracteres variables y con la condición NOT NULL ya que es obligatorio informar estos datos.
 
-A continuación se adjunta el script: 
+- **Tabla “detalle_de_premios”.**
 
-## Importación de datos
+En esta tabla se profundiza sobre los ítems que conforman los premios. Los campos que componen esta tabla son:
 
-Se ha agregado un dato de manera manual a modo de ejemplo. Ver script adjunto: [Ingreso de Datos.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Dato%20Manual/Ingreso%20de%20Datos.sql)
+- id_detalle
+- id_premio
+- detalle
 
-El resto de los datos se ha importado mediante archivo CSV. Se adjuntan capturas de pantalla y archivos utilizados para la importación: [Importación de Datos](https://github.com/sebabayarres/SQL/tree/main/Importación%20de%20Datos)
+Se estableció el “id_detalle” como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agrego AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un numero entero.
+
+El campo “id_premio” hace referencia a la tabla premios mediante un FOREIGN KEY.
+
+- **Tabla “formas_de_contacto”**
+
+En esta tabla se ingresan las distintas formas de contacto que pueden tener las ventas. Los campos son.
+
+- id_forma_contacto
+- descripción
+
+Donde id_forma_contacto es el PRIMARY KEY que será utilizado en la tabla “ventas” para identificar la forma de contacto de cada venta.
+
+- **Tabla “entrega_rifas”**
+
+Esta tabla contiene datos sobre la entrega física de las rifas. Aquellas rifas que fueron entregadas aparecen con la fecha de entrega, aquellas que aun no han sido entregadas aparecen con el dato NULL.
+
+Los campos de la tabla son:
+
+- id_entrega
+- id_rifa
+- numero
+- fecha_entrega
+
+Se definió id_entrega como PRIMARY KEY.
+
+Los campos id_rifa y numero hacen referencia a la tabla rifas mediante un FOREIGN KEY.
+
+- **Tabla “auditoria_entregas”**
+
+Esta tabla fue creada para documentar cambios en la tabla de entregas mediante un Trigger.
+
+Los campos de la tabla son:
+
+- id_auditoria_entregas
+- id_entrega
+- operación
+- fecha
+
+Se definió id_auditoria_entregas como PRIMARY KEY.
+
+El campo id_entrega hace referencia a la tabla “entrega_rifas” mediante un FOREIGN KEY.
+
+- **Tabla “auditoria_compradores”**
+
+Esta tabla fue creada para documentar cambios en la tabla de compradores mediante un Trigger.
+
+Los campos de la tabla son:
+
+- id_auditoria_compradores
+- id_comprador
+- operación
+- campo_modificado
+- valor_anterior
+- valor_nuevo
+- fecha
+
+Se definió id_auditoria_compradores como PRIMARY KEY.
+
+El campo id_comprador hace referencia a la tabla “compradores” mediante un FOREIGN KEY.
+
+- **Tabla “auditoria_ventas”**
+
+Esta tabla fue creada para documentar cambios en la tabla de ventas mediante un Trigger.
+
+Los campos de la tabla son:
+
+- id_auditoria_ventas
+- operación
+- id_comprador
+- id_rifa
+- fecha
+
+Se definió id_auditoria_ventas como PRIMARY KEY.
+
+- **Tabla “fechas_sorteos”**
+
+Esta tabla contiene las fechas de cada sorteo.
+
+Los campos son:
+
+- id_sorteo
+- id_premio
+- fecha_sorteo
+
+Se ha definido un PRIMARY KEY entre el campo id_sorteo y el campo id_premio.
+
+A su vez, este PRIMARY KEY hace referencia al PRIMARY KEY de la tabla sorteos.
+
+- **Tabla “ubicaciones_venta”**
+
+En esta tabla se registran las locaciones donde fueron realizadas las ventas. Los campos son:
+
+- id_ubicacion
+- descripción
+
+Se ha definido un PRIMARY KEY en el campo id_ubicacion
+
+- **Tabla “formas_pago”**
+
+En esta tabla se registran las distintas formas de pago que luego son utilizadas en la tabla “ventas”.
+
+Los campos son:
+
+- id_forma_pago
+- descripción
+
+Se ha definido el id_forma_pago como PRIMARY KEY.
+
+- **Tabla “tipos_de_ventas”**
+
+En esta tabla se registran los distintos tipos de ventas que luego son utilizadas en la tabla “ventas”.
+
+Los campos son:
+
+- id_tipo_de_venta
+- descripción
+
+Se ha definido el id_tipo_de_venta como PRIMARY KEY.
 
 ## Listado de Vistas
 
@@ -167,3 +288,10 @@ Se ha creado una tabla de auditoría que registra los cambios de INSERT, UPDATE 
 Esto se ha realizado mediante un trigger que registra todas las nuevas adiciones, todos los cambios y todas las eliminaciones de la tabla.
 
 Ver script adjunto: [Trigger Venta.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Triggers/Trigger%20Venta.sql)
+
+## Importación de datos
+
+Se ha agregado un dato de manera manual a modo de ejemplo. Ver script adjunto: [Ingreso de Datos.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Dato%20Manual/Ingreso%20de%20Datos.sql)
+
+El resto de los datos se ha importado mediante archivo CSV. Se adjuntan capturas de pantalla y archivos utilizados para la importación: [Importación de Datos](https://github.com/sebabayarres/SQL/tree/main/Importación%20de%20Datos)
+
