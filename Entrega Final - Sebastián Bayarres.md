@@ -225,8 +225,6 @@ En la vista se expone:
 - **nombre** de la tabla compradores
 - **apellido** de la tabla compradores
 
-Ver script adjunto: [Vista Resultados con Nombres.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Vistas/Vista%20Resultados%20con%20Nombres.sql)
-
 **Vista “rifa_por_comprador”**
 
 El propósito de esta vista es mostrar un listado de todas las rifas con los nombres y apellidos de sus respectivos compradores. Esto facilita identificar rápidamente el comprador de cada rifa y cuáles aún están disponibles, sin revelar datos sensibles de los compradores.
@@ -237,7 +235,42 @@ En la vista se expone:
 - **nombre** de la tabla compradores
 - **apellido** de la tabla compradores
 
-Ver script adjunto: [Vista Rifa por Comprador.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Vistas/Vista%20Rifa%20por%20Comprador.sql)
+**Vista “rifas_sin_entregar”**
+
+El propósito de esta vista es mostrar las rifas que aun no han sido entregadas, incluyendo información de contacto y domicilio del comprador. Esto facilita el seguimiento y coordinación de entregas pendientes.
+
+En la vista se expone:
+
+- **id_comprador** de la tabla compradores
+- **nombre** de la tabla compradores
+- **apellido** de la tabla compradores
+- **domicilio** de la tabla compradores
+- **teléfono** de la tabla compradores
+- **id_rifa** de la tabla rifas
+- **numero** de la tabla rifas
+
+**Vista “premios_y_ganadores”**
+
+El propósito de esta vista es resumir todos los premios sorteados junto con los datos del comprador ganador, permitiendo un seguimiento de los resultados de los sorteos.
+
+En la vista se expone:
+
+- **id_premio** de la tabla premios
+- **descripción_premio** de la tabla premios
+- **numero** de la tabla rifas
+- **nombre** de la tabla compradores
+- **apellido** de la tabla compradores
+
+Ver script adjunto:
+
+**Vista “rifas_sin_vender”**
+
+El propósito de esta vista es listar todas las rifas que aun no han sido vendidas. Sirve para identificar el stock y planificar nuevas estrategias de venta.
+
+En la vista se expone:
+
+- **id_rifa** de la tabla rifas
+- **numero** de la tabla rifas
 
 ## Listado de Funciones
 
@@ -246,8 +279,6 @@ Ver script adjunto: [Vista Rifa por Comprador.sql](https://github.com/sebabayarr
 La función tiene como objetivo devolver el número de rifas vendidas de manera sencilla para el usuario. Dado que cada rifa puede ser vendida solo una vez, la función cuenta el total de ventas para determinar la cantidad de rifas vendidas.
 
 La función lee información desde la tabla de ventas.
-
-Ver script adjunto: [Funcion Contar Rifas.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Funciones/Funcion%20Contar%20Rifas.sql)
 
 ## Listado de Stored Procedures
 
@@ -263,8 +294,6 @@ El procedimiento arroja los siguientes datos:
 - **nombre** de la tabla compradores
 - **apellido** de la tabla compradores
 
-Ver script adjunto: [Stored Procedure Tipo de Pago.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Stored%20Procedures/Stored%20Procedure%20por%20Tipo%20de%20Pago.sql)
-
 **Stored Procedure “obtener_ventas_por_tipo”**
 
 El procedimiento optimiza el acceso a los datos clave de las ventas efectuadas en una modalidad específica. Este enfoque permite identificar las transacciones realizadas de manera online, facilitando la coordinación de la entrega posterior de la rifa impresa.
@@ -277,7 +306,6 @@ El procedimiento arroja los siguientes datos:
 - **apellido** de la tabla compradores
 - **tipo_de_venta** de la tabla ventas
 
-Ver script adjunto: [Stored Procedure Tipo de Venta.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Stored%20Procedures/Stored%20Procedure%20Tipo%20de%20Venta.sql)
 
 ## Listado de Triggers
 
@@ -287,11 +315,20 @@ Se ha creado una tabla de auditoría que registra los cambios de INSERT, UPDATE 
 
 Esto se ha realizado mediante un trigger que registra todas las nuevas adiciones, todos los cambios y todas las eliminaciones de la tabla.
 
-Ver script adjunto: [Trigger Venta.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Triggers/Trigger%20Venta.sql)
+**Trigger sobre la tabla “compradores”**
+
+Se ha creado una tabla de auditoría que registra los cambios de la tabla compradores, permitiendo controlar cambios.
+
+Esto se ha realizado mediante un trigger que registra todos los cambios de la tabla.
+
+**Trigger sobre la tabla “entrega_rifas”**
+
+Se ha creado una tabla de auditoría que registra todas las entregas de rifas.
+
+Esto se ha realizado mediante un trigger que registra todas las adiciones a la tabla.
+
 
 ## Importación de datos
 
-Se ha agregado un dato de manera manual a modo de ejemplo. Ver script adjunto: [Ingreso de Datos.sql](https://github.com/sebabayarres/SQL/blob/main/Scripts%20Segunda%20Entrega/Dato%20Manual/Ingreso%20de%20Datos.sql)
-
-El resto de los datos se ha importado mediante archivo CSV. Se adjuntan capturas de pantalla y archivos utilizados para la importación: [Importación de Datos](https://github.com/sebabayarres/SQL/tree/main/Importación%20de%20Datos)
+Ver script de inserción de datos adjunto: 
 
