@@ -55,7 +55,7 @@ Se adjunta el archivo de backup: [rifas_backup.sql](https://github.com/sebabayar
 
 ## Diagrama Entidad Relación
 
-![Diagrama Entidad Relación](https://github.com/sebabayarres/SQL_Final/blob/7a4dec7af1837c273d05fd80cb955d85793eab89/Diagrama%20Entidad%20Relaci%C3%B3n/Diagrama%20Entidad%20Relacio%CC%81n.jpg)
+![Diagrama Entidad Relación](https://github.com/sebabayarres/SQL_Final/blob/main/Diagrama%20Entidad%20Relación/Diagrama%20Entidad%20Relación.jpg)
 
 ## Listado de Tablas en la Base de Datos:
 
