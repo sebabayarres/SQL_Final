@@ -39,7 +39,7 @@ En caso de querer restaurar el mismo deberiamos usar el siguiente código:
 
 mysql -u root -p RIFAS < rifas_backup.sql
 
-Se adjunta el archivo de backup: 
+Se adjunta el archivo de backup: [rifas_backup.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/rifas_backup.sql)
 
 
 ## Diagrama Entidad Relación
