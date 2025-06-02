@@ -308,8 +308,6 @@ En la vista se expone:
 - **nombre** de la tabla compradores
 - **apellido** de la tabla compradores
 
-Ver script adjunto:
-
 **Vista “rifas_sin_vender”**
 
 El propósito de esta vista es listar todas las rifas que aún no han sido vendidas. Sirve para identificar el stock y planificar nuevas estrategias de venta.
