@@ -1,8 +1,8 @@
 # Entrega Final - Sebastián Bayarres
 
 ## Índice
-- [Descripción de la temática de la base de datos](#Descripción_de_la_tematica_de_la_base_de_datos)
-- [Objetos de mantenimiento](#Objetos_de_mantenimiento)
+- [Descripción de la temática de la base de datos](#Descripción-de-la-temática-de-la-base-de-datos)
+- [Objetos de mantenimiento](#objetos-de-mantenimiento)
 
 ## Descripción de la temática de la base de datos
 
