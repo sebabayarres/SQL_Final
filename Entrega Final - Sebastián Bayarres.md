@@ -27,7 +27,7 @@ Con el fin de llevar a cabo el mantenimiento de la base de datos, se han creado 
 - Un usuario con permisos de lectura y escritura
 - Un usuario con todos los permisos
 
-  Se adjunta script de creación de usuarios:
+  Se adjunta script de creación de usuarios: [Creación de Usuarios.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Creacion%20de%20Usuarios.sql)
 
 **Backup**
 
@@ -367,8 +367,9 @@ Se ha creado una tabla de auditoría que registra todas las entregas de rifas.
 
 Esto se ha realizado mediante un trigger que registra todas las INSERT a la tabla de entregas.
 
+Ver script de creación de todos los elementos de la tabla: [Script de Creación.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Script%20de%20Creación.sql)
 
 ## Importación de datos
 
-Ver script de inserción de datos adjunto: 
+Ver script de inserción de datos adjunto: [Script de Inserción de Datos](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Insercion%20de%20Datos.sql)
 
