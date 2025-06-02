@@ -320,6 +320,14 @@ La función lee información desde la tabla de ventas.
 
 La funcion tiene como objetivo devolver el numero de rifas entregadas. La funcion lee informacion desde la tabla entrega_rifas. Para determinar el número de rifas sin entregar cuenta el total de lineas que tiene NULL como valor en el campo "fecha_entrega".
 
+En base a estas funciones se puede extraer un [Informe de rifas vendidas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Vendidas.csv) y un [Informe de Rifas Entregadas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Entregadas.csv)
+
+En base a estos informes se elaboraron las siguientes gráficas:
+
+![Gráfica 1](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Imagen%201.png)
+
+![Gráfica 2](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Imagen%202.png)
+
 ## Listado de Stored Procedures
 
 **Stored Procedure “obtener_ventas_por_forma_de_pago”**
