@@ -38,7 +38,7 @@ Con el fin de llevar a cabo el mantenimiento de la base de datos, se han creado 
 - Un usuario con permisos de lectura y escritura
 - Un usuario con todos los permisos
 
-  Se adjunta script de creación de usuarios: [Creación de Usuarios.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Creación%20de%20Usuarios.sql)
+  Se adjunta script de creación de usuarios: [Creación de Usuarios.sql](https://github.com/sebabayarres/SQL_Final/blob/2a3efd85631ea9577caa660511fcde3b9ca885b5/Scripts/Creaci%C3%B3n%20de%20Usuarios.sql)
 
 **Backup**
 
@@ -50,7 +50,7 @@ En caso de querer restaurar el mismo deberíamos usar el siguiente código:
 
 mysql -u root -p RIFAS < rifas_backup.sql
 
-Se adjunta el archivo de backup: [rifas_backup.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/rifas_backup.sql)
+Se adjunta el archivo de backup: [rifas_backup.sql](https://github.com/sebabayarres/SQL_Final/blob/2a3efd85631ea9577caa660511fcde3b9ca885b5/Scripts/rifas_backup.sql)
 
 
 ## Diagrama Entidad Relación
@@ -331,13 +331,13 @@ La función lee información desde la tabla de ventas.
 
 La función tiene como objetivo devolver el número de rifas entregadas. La función lee información desde la tabla entrega_rifas. Para determinar el número de rifas sin entregar cuenta el total de líneas que tiene NULL como valor en el campo "fecha_entrega".
 
-En base a estas funciones se puede extraer un [Informe de rifas vendidas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Vendidas.csv) y un [Informe de Rifas Entregadas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Entregadas.csv)
+En base a estas funciones se puede extraer un [Informe de rifas vendidas](https://github.com/sebabayarres/SQL_Final/blob/6e059e85efcd3c5b1198778e07f19ecb91e0c7ec/Informes/Rifas%20Vendidas.csv) y un [Informe de Rifas Entregadas](https://github.com/sebabayarres/SQL_Final/blob/6e059e85efcd3c5b1198778e07f19ecb91e0c7ec/Informes/Rifas%20Entregadas.csv)
 
 En base a estos informes se elaboraron las siguientes gráficas:
 
-![Gráfica 1](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Imagen%201.png)
+![Gráfica 1](https://github.com/sebabayarres/SQL_Final/blob/6e059e85efcd3c5b1198778e07f19ecb91e0c7ec/Informes/Imagen%201.png)
 
-![Gráfica 2](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Imagen%202.png)
+![Gráfica 2](https://github.com/sebabayarres/SQL_Final/blob/6e059e85efcd3c5b1198778e07f19ecb91e0c7ec/Informes/Imagen%202.png)
 
 ## Listado de Stored Procedures
 
@@ -386,9 +386,8 @@ Se ha creado una tabla de auditoría que registra todas las entregas de rifas.
 
 Esto se ha realizado mediante un trigger que registra todas las INSERT a la tabla de entregas.
 
-Ver script de creación de todos los elementos de la tabla: [Script de Creación.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Script%20de%20Creación.sql)
+Ver script de creación de todos los elementos de la tabla: [Script de Creación.sql](https://github.com/sebabayarres/SQL_Final/blob/2a3efd85631ea9577caa660511fcde3b9ca885b5/Scripts/Script%20de%20Creacio%CC%81n.sql)
 
 ## Importación de datos
 
-Ver script de inserción de datos adjunto: [Script de Inserción de Datos](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Inserción%20de%20Datos.sql)
-
+Ver script de inserción de datos adjunto: [Script de Inserción de Datos](https://github.com/sebabayarres/SQL_Final/blob/2a3efd85631ea9577caa660511fcde3b9ca885b5/Scripts/Inserci%C3%B3n%20de%20Datos.sql)
