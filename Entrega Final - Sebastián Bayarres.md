@@ -356,15 +356,15 @@ Esto se ha realizado mediante un trigger que registra todas las nuevas adiciones
 
 **Trigger sobre la tabla “compradores”**
 
-Se ha creado una tabla de auditoría que registra los cambios de la tabla compradores, permitiendo controlar cambios.
+Se ha creado una tabla de auditoría que registra los cambios de UPDATE de la tabla compradores, permitiendo controlar las variaciones.
 
-Esto se ha realizado mediante un trigger que registra todos los cambios de la tabla.
+Esto se ha realizado mediante un trigger que registra todas las actualizaciones de la tabla.
 
 **Trigger sobre la tabla “entrega_rifas”**
 
 Se ha creado una tabla de auditoría que registra todas las entregas de rifas.
 
-Esto se ha realizado mediante un trigger que registra todas las adiciones a la tabla.
+Esto se ha realizado mediante un trigger que registra todas las INSERT a la tabla de entregas.
 
 
 ## Importación de datos
