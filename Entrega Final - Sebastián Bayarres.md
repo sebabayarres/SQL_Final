@@ -35,7 +35,7 @@ Se ha creado un backup en terminal con el siguiente código:
 
 mysqldump -u root -p RIFAS > rifas_backup.sql
 
-En caso de querer restaurar el mismo deberiamos usar el siguiente código:
+En caso de querer restaurar el mismo deberíamos usar el siguiente código:
 
 mysql -u root -p RIFAS < rifas_backup.sql
 
@@ -62,12 +62,12 @@ En esta tabla se registran los datos de todos los compradores. La misma cuenta c
 - **id_forma_contacto**
 - **id_ubicacion**
 
-Se estableció el id_comprador como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agrego AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un numero entero.
+Se estableció el id_comprador como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agregó AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un número entero.
 
 Los demás campos se definen como VARCHAR ya que almacenan cadenas de texto de longitud variable. Todos se establecen como NOT NULL debido a que la institución requiere obligatoriamente cada uno de estos datos. Además, los campos email, documento y teléfono se definen como UNIQUE, ya que cada comprador debe tener información única en estos campos.
 
-El campo "id_forma_contacto" hace referencia a la tabla "formas_de_contacto" a traves de un FOREIGN KEY.
-El campo "id_ubicacion" hace referencia a la tabla "ubicaciones_ventas" a traves de un FOREIGN KEY.
+El campo "id_forma_contacto" hace referencia a la tabla "formas_de_contacto" a través de un FOREIGN KEY.
+El campo "id_ubicacion" hace referencia a la tabla "ubicaciones_ventas" a través de un FOREIGN KEY.
 
 - **Tabla “rifas”**
 
@@ -76,7 +76,7 @@ En esta tabla se registran todos los números de rifa que tiene el estudiante pa
 - **id_rifa**
 - **numero**
 
-Se ha establecido la condición UNIQUE en el campo “numero” ya que cada rifa tiene un numero único que no puede repetirse en otras rifas.
+Se ha establecido la condición UNIQUE en el campo “numero” ya que cada rifa tiene un número único que no puede repetirse en otras rifas.
 
 - **Tabla “premios”**
 
@@ -123,7 +123,7 @@ En esta tabla se profundiza sobre los ítems que conforman los premios. Los camp
 - **id_premio**
 - **detalle**
 
-Se estableció el “id_detalle” como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agrego AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un numero entero.
+Se estableció el “id_detalle” como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agregó AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un número entero.
 
 El campo “id_premio” hace referencia a la tabla premios mediante un FOREIGN KEY.
 
@@ -138,7 +138,7 @@ Donde id_forma_contacto es el PRIMARY KEY que será utilizado en la tabla “ven
 
 - **Tabla “entrega_rifas”**
 
-Esta tabla contiene datos sobre la entrega física de las rifas. Aquellas rifas que fueron entregadas aparecen con la fecha de entrega, aquellas que aun no han sido entregadas aparecen con el dato NULL.
+Esta tabla contiene datos sobre la entrega física de las rifas. Aquellas rifas que fueron entregadas aparecen con la fecha de entrega, aquellas que aún no han sido entregadas aparecen con el dato NULL.
 
 Los campos de la tabla son:
 
@@ -273,7 +273,7 @@ En la vista se expone:
 
 **Vista “rifas_sin_entregar”**
 
-El propósito de esta vista es mostrar las rifas que aun no han sido entregadas, incluyendo información de contacto y domicilio del comprador. Esto facilita el seguimiento y coordinación de entregas pendientes.
+El propósito de esta vista es mostrar las rifas que aún no han sido entregadas, incluyendo información de contacto y domicilio del comprador. Esto facilita el seguimiento y coordinación de entregas pendientes.
 
 En la vista se expone:
 
@@ -301,7 +301,7 @@ Ver script adjunto:
 
 **Vista “rifas_sin_vender”**
 
-El propósito de esta vista es listar todas las rifas que aun no han sido vendidas. Sirve para identificar el stock y planificar nuevas estrategias de venta.
+El propósito de esta vista es listar todas las rifas que aún no han sido vendidas. Sirve para identificar el stock y planificar nuevas estrategias de venta.
 
 En la vista se expone:
 
@@ -318,7 +318,7 @@ La función lee información desde la tabla de ventas.
 
 **Función “contar_rifas_entregadas”.**
 
-La funcion tiene como objetivo devolver el numero de rifas entregadas. La funcion lee informacion desde la tabla entrega_rifas. Para determinar el número de rifas sin entregar cuenta el total de lineas que tiene NULL como valor en el campo "fecha_entrega".
+La función tiene como objetivo devolver el número de rifas entregadas. La función lee información desde la tabla entrega_rifas. Para determinar el número de rifas sin entregar cuenta el total de líneas que tiene NULL como valor en el campo "fecha_entrega".
 
 En base a estas funciones se puede extraer un [Informe de rifas vendidas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Vendidas.csv) y un [Informe de Rifas Entregadas](https://github.com/sebabayarres/SQL_Final/blob/main/Informes/Rifas%20Entregadas.csv)
 
