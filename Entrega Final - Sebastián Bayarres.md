@@ -27,7 +27,7 @@ Con el fin de llevar a cabo el mantenimiento de la base de datos, se han creado 
 - Un usuario con permisos de lectura y escritura
 - Un usuario con todos los permisos
 
-  Se adjunta script de creación de usuarios: [Creación de Usuarios.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Creacion%20de%20Usuarios.sql)
+  Se adjunta script de creación de usuarios: [Creación de Usuarios.sql](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Creación%20de%20Usuarios.sql)
 
 **Backup**
 
@@ -379,5 +379,5 @@ Ver script de creación de todos los elementos de la tabla: [Script de Creación
 
 ## Importación de datos
 
-Ver script de inserción de datos adjunto: [Script de Inserción de Datos](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Insercion%20de%20Datos.sql)
+Ver script de inserción de datos adjunto: [Script de Inserción de Datos](https://github.com/sebabayarres/SQL_Final/blob/main/Scripts/Inserción%20de%20Datos.sql)
 
