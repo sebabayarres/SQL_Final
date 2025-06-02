@@ -222,7 +222,8 @@ En esta tabla se registran las locaciones donde fueron realizadas las ventas. Lo
 - **id_ubicacion**
 - **descripción**
 
-Se ha definido un PRIMARY KEY en el campo id_ubicacion
+Se ha definido un PRIMARY KEY en el campo id_ubicacion, el que será utilizado en la tabla “ventas” para identificar la ubicación de cada venta.
+
 
 - **Tabla “formas_pago”**
 
