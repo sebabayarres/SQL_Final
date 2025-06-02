@@ -18,6 +18,30 @@ Actualmente, la gestión de la venta de rifas se realiza manualmente, lo cual pu
 
 La base de datos será utilizada por un vendedor que gestionará la venta de rifas para financiar el viaje de estudiantes de Ciencias Económicas. El vendedor registrará los datos de los compradores, los sorteos y los premios. Este sistema permitirá un control eficiente de las rifas vendidas, los resultados y los premios. La implementación simplificará el trabajo del vendedor, mejorando la precisión y agilidad en la gestión.
 
+## Objetos de mantenimiento
+
+**Usuarios**
+
+Con el fin de llevar a cabo el mantenimiento de la base de datos, se han creado distintos usuarios:
+- Un usuario con permisos únicamente de lectura
+- Un usuario con permisos de lectura y escritura
+- Un usuario con todos los permisos
+
+  Se adjunta script de creación de usuarios:
+
+**Backup**
+
+Se ha creado un backup en terminal con el siguiente código: 
+
+mysqldump -u root -p RIFAS > rifas_backup.sql
+
+En caso de querer restaurar el mismo deberiamos usar el siguiente código:
+
+mysql -u root -p RIFAS < rifas_backup.sql
+
+Se adjunta el archivo de backup: 
+
+
 ## Diagrama Entidad Relación
 
 ![Diagrama Entidad Relación](https://github.com/sebabayarres/SQL_Final/blob/7a4dec7af1837c273d05fd80cb955d85793eab89/Diagrama%20Entidad%20Relaci%C3%B3n/Diagrama%20Entidad%20Relacio%CC%81n.jpg)
