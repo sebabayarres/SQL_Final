@@ -59,10 +59,15 @@ En esta tabla se registran los datos de todos los compradores. La misma cuenta c
 - **documento**
 - **domicilio**
 - **teléfono**
+- **id_forma_contacto**
+- **id_ubicacion**
 
 Se estableció el id_comprador como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agrego AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un numero entero.
 
 Los demás campos se definen como VARCHAR ya que almacenan cadenas de texto de longitud variable. Todos se establecen como NOT NULL debido a que la institución requiere obligatoriamente cada uno de estos datos. Además, los campos email, documento y teléfono se definen como UNIQUE, ya que cada comprador debe tener información única en estos campos.
+
+El campo "id_forma_contacto" hace referencia a la tabla "formas_de_contacto" a traves de un FOREIGN KEY.
+El campo "id_ubicacion" hace referencia a la tabla "ubicaciones_ventas" a traves de un FOREIGN KEY.
 
 - **Tabla “rifas”**
 
@@ -90,7 +95,7 @@ En esta tabla se registran todos los sorteos, se los identifica con un identific
 - **id_premio**
 - **resultado**
 
-El campo id_premio hace referencia a la tabla “premios” mediante un FOREIGN KEY. El campo resultado hace referencia al campo “numero” de la tabla “rifas”, ya que el resultado del sorteo es un número de rifa que resulta ganador.
+El campo id_premio hace referencia a la tabla “premios” mediante un FOREIGN KEY. El campo resultado hace referencia al campo “id_rifa” de la tabla “rifas”, ya que el resultado del sorteo es un número de rifa que resulta ganador.
 
 Se ha definido un PRIMARY KEY entre el campo id_sorteo y el campo id_premio.
 
@@ -103,17 +108,20 @@ En esta tabla se registran todos los sorteos, se los identifica con un identific
 - **tipo_de_venta**
 - **forma_de_pago**
 
-El campo id_comprador hace referencia a la tabla “compradores” mediante un FOREIGN KEY. El campo id_rifa hace referencia a la tabla “rifas”.
+Los campos de esta tabla hacen referencia a campos en otras tablas mediante un FOREIGN KEY:
+- El campo id_comprador hace referencia a la tabla “compradores”.
+- El campo id_rifa hace referencia a la tabla “rifas”.
+- El campo tipo_de_venta hace referencia a la tabla "tipos_de_ventas".
+- El campo forma_de_pago hace referencia a la tabla "formas_pago".
 
-Adicionalmente se crean los campos de tipo_de_venta y forma_de_pago, con formato VARCHAR ya que pueden tener caracteres variables y con la condición NOT NULL ya que es obligatorio informar estos datos.
 
 - **Tabla “detalle_de_premios”.**
 
 En esta tabla se profundiza sobre los ítems que conforman los premios. Los campos que componen esta tabla son:
 
-- id_detalle
-- id_premio
-- detalle
+- **id_detalle**
+- **id_premio**
+- **detalle**
 
 Se estableció el “id_detalle” como principal identificador de la tabla, por lo que se lo asigno como PRIMARY KEY. Adicionalmente se le agrego AUTO_INCREMENT para que la tabla complete automáticamente el valor al ingresar los distintos datos. Esta en formato INT dado que será un numero entero.
 
@@ -123,8 +131,8 @@ El campo “id_premio” hace referencia a la tabla premios mediante un FOREIGN 
 
 En esta tabla se ingresan las distintas formas de contacto que pueden tener las ventas. Los campos son.
 
-- id_forma_contacto
-- descripción
+- **id_forma_contacto**
+- **descripción**
 
 Donde id_forma_contacto es el PRIMARY KEY que será utilizado en la tabla “ventas” para identificar la forma de contacto de cada venta.
 
@@ -134,10 +142,10 @@ Esta tabla contiene datos sobre la entrega física de las rifas. Aquellas rifas 
 
 Los campos de la tabla son:
 
-- id_entrega
-- id_rifa
-- numero
-- fecha_entrega
+- **id_entrega**
+- **id_rifa**
+- **numero**
+- **fecha_entrega**
 
 Se definió id_entrega como PRIMARY KEY.
 
@@ -149,10 +157,10 @@ Esta tabla fue creada para documentar cambios en la tabla de entregas mediante u
 
 Los campos de la tabla son:
 
-- id_auditoria_entregas
-- id_entrega
-- operación
-- fecha
+- **id_auditoria_entregas**
+- **id_entrega**
+- **operación**
+- **fecha**
 
 Se definió id_auditoria_entregas como PRIMARY KEY.
 
@@ -164,13 +172,13 @@ Esta tabla fue creada para documentar cambios en la tabla de compradores mediant
 
 Los campos de la tabla son:
 
-- id_auditoria_compradores
-- id_comprador
-- operación
-- campo_modificado
-- valor_anterior
-- valor_nuevo
-- fecha
+- **id_auditoria_compradores**
+- **id_comprador**
+- **operación**
+- **campo_modificado**
+- **valor_anterior**
+- **valor_nuevo**
+- **fecha**
 
 Se definió id_auditoria_compradores como PRIMARY KEY.
 
@@ -182,13 +190,16 @@ Esta tabla fue creada para documentar cambios en la tabla de ventas mediante un 
 
 Los campos de la tabla son:
 
-- id_auditoria_ventas
-- operación
-- id_comprador
-- id_rifa
-- fecha
+- **id_auditoria_ventas**
+- **operación**
+- **id_comprador**
+- **id_rifa**
+- **fecha**
 
 Se definió id_auditoria_ventas como PRIMARY KEY.
+
+El campo "id_comprador" hace referencia a la tabla compradores.
+El campo "id_rifa" hace referencia a la tabla rifas.
 
 - **Tabla “fechas_sorteos”**
 
@@ -196,9 +207,9 @@ Esta tabla contiene las fechas de cada sorteo.
 
 Los campos son:
 
-- id_sorteo
-- id_premio
-- fecha_sorteo
+- **id_sorteo**
+- **id_premio**
+- **fecha_sorteo**
 
 Se ha definido un PRIMARY KEY entre el campo id_sorteo y el campo id_premio.
 
@@ -208,8 +219,8 @@ A su vez, este PRIMARY KEY hace referencia al PRIMARY KEY de la tabla sorteos.
 
 En esta tabla se registran las locaciones donde fueron realizadas las ventas. Los campos son:
 
-- id_ubicacion
-- descripción
+- **id_ubicacion**
+- **descripción**
 
 Se ha definido un PRIMARY KEY en el campo id_ubicacion
 
@@ -219,8 +230,8 @@ En esta tabla se registran las distintas formas de pago que luego son utilizadas
 
 Los campos son:
 
-- id_forma_pago
-- descripción
+- **id_forma_pago**
+- **descripción**
 
 Se ha definido el id_forma_pago como PRIMARY KEY.
 
@@ -230,8 +241,8 @@ En esta tabla se registran los distintos tipos de ventas que luego son utilizada
 
 Los campos son:
 
-- id_tipo_de_venta
-- descripción
+- **id_tipo_de_venta**
+- **descripción**
 
 Se ha definido el id_tipo_de_venta como PRIMARY KEY.
 
