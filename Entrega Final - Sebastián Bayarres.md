@@ -3,6 +3,13 @@
 ## Índice
 - [Descripción de la temática de la base de datos](#Descripción-de-la-temática-de-la-base-de-datos)
 - [Objetos de mantenimiento](#objetos-de-mantenimiento)
+- [Diagrama Entidad Relación](#diagrama-entidad-relación)
+- [Listado de Tablas en la Base de Datos](#listado-de-tablas-en-la-base-de-datos)
+- [Listado de Vistas](#listado-de-vistas)
+- [Listado de Funciones](#listado-de-funciones)
+- [Listado de Stored Procedures](#listado-de-stored-procedures)
+- [Listado de Triggers](#listado-de-triggers)
+- [Importación de datos](#importación-de-datos)
 
 ## Descripción de la temática de la base de datos
 
