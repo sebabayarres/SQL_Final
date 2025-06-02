@@ -315,6 +315,10 @@ La función tiene como objetivo devolver el número de rifas vendidas de manera 
 
 La función lee información desde la tabla de ventas.
 
+**Función “contar_rifas_entregadas”.**
+
+La funcion tiene como objetivo devolver el numero de rifas entregadas. La funcion lee informacion desde la tabla entrega_rifas. Para determinar el número de rifas sin entregar cuenta el total de lineas que tiene NULL como valor en el campo "fecha_entrega".
+
 ## Listado de Stored Procedures
 
 **Stored Procedure “obtener_ventas_por_forma_de_pago”**
